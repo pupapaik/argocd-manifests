@@ -1,0 +1,34 @@
+metadata:
+  name: ves-io-vk8s-service-argocd-server-http
+  namespace: gitops
+  uid: b206dda7-bcbf-4fd0-9464-4d842222041b
+  labels: {}
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: b206dda7-bcbf-4fd0-9464-4d842222041b
+spec:
+  gc_spec:
+    endpoints:
+      - kind: endpoint.Object
+        uid: a0cfecf1-35cb-4d25-848b-9ba6454ac43f
+        tenant: ""
+        namespace: ""
+        name: ""
+    health_checks: []
+    loadbalancer_algorithm: ROUND_ROBIN
+    circuit_breaker: null
+    endpoint_subsets: []
+    default_subset: {}
+    fallback_policy: NO_FALLBACK
+    tls_parameters: null
+    connection_timeout: 0
+    http_idle_timeout: 0
+    outlier_detection: null
+    endpoint_selection: DISTRIBUTED
+    dns_lookup_family: AUTO
+    dns_discovery_type: STRICT_DNS
+    http2_options:
+      enabled: false
+  ver_spec: null

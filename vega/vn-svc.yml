@@ -1,0 +1,42 @@
+metadata:
+  name: ves.io-vk8s-service-network-smart-retail
+  namespace: shared
+  uid: 9269494c-0bff-4203-a8cb-1fbdbaa83a6e
+  labels: {}
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: 9269494c-0bff-4203-a8cb-1fbdbaa83a6e
+  tenant: smart-retail
+  object_index: 16785530
+spec:
+  gc_spec:
+    subnets:
+      - ipv4:
+          prefix: 10.3.0.0
+          plen: 16
+    type: VIRTUAL_NETWORK_SITE_LOCAL
+    static_routes: []
+  ver_spec:
+    vn_id: 16785530
+    subnets:
+      - subnets:
+          ipv4:
+            prefix: 10.3.0.0
+            plen: 16
+        default_gw:
+          ipv4:
+            addr: 10.3.0.1
+    vrfs:
+      - kind: ves.io.vega.cfg.vrf.Object
+        uid: 50cd201f-56ac-455d-a0c3-469ad5c81d2b
+        tenant: ""
+        namespace: ""
+        name: ""
+    vn_type: 16
+    is_public: false
+    static_route_list: []
+    VK8S: null
+    connected_vn: []
+    p1_network_policy_set: []

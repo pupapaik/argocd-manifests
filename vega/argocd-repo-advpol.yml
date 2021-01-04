@@ -1,0 +1,29 @@
+metadata:
+  name: ves-io-vk8s-service-argocd-repo-server-server
+  namespace: gitops
+  uid: bffdb380-2ab8-4d67-acf0-317d708b7115
+  labels:
+    app.kubernetes.io/component: repo-server
+    app.kubernetes.io/name: argocd-repo-server
+    app.kubernetes.io/part-of: argocd
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: bffdb380-2ab8-4d67-acf0-317d708b7115
+spec:
+  gc_spec:
+    where:
+      virtual_network:
+        ref:
+          - kind: virtual_network.Object
+            uid: 9269494c-0bff-4203-a8cb-1fbdbaa83a6e
+            tenant: ""
+            namespace: ""
+            name: ""
+    address: 10.3.82.55
+    public_ip: []
+    protocol: TCP
+    port: 8081
+    tls_parameters: null
+    skip_xff_append: false

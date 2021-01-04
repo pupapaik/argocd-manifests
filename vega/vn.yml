@@ -1,0 +1,26 @@
+metadata:
+  name: gitops
+  namespace: gitops
+  uid: 48acc71a-aaa8-4bc6-b470-1dd3f030e8f8
+spec:
+  gcSpec:
+    subnets:
+    - ipv4:
+        plen: 16
+        prefix: 10.1.0.0
+  verSpec:
+    VK8S:
+      namespace: gitops
+    subnets:
+    - defaultGw:
+        ipv4:
+          addr: 10.1.0.1
+      subnets:
+        ipv4:
+          plen: 16
+          prefix: 10.1.0.0
+    vnId: 512
+    vnType: 520
+    vrfs:
+    - kind: ves.io.vega.cfg.vrf.Object
+      uid: b135a3eb-0fe6-4d73-8087-6bffde7b042c

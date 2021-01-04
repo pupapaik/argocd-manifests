@@ -1,0 +1,20 @@
+metadata:
+  name: ves.io-vk8s-ain-network-smart-retail-86aabb62-5865-45aa-8d17-a6435e735362
+  namespace: shared
+  uid: 303f967d-5120-4daa-a87f-353b35330273
+  labels: {}
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: 303f967d-5120-4daa-a87f-353b35330273
+  tenant: smart-retail
+spec:
+  ver_spec:
+    optimized_vrf: []
+    site:
+      - kind: ves.io.vega.cfg.site.Object
+        uid: 86aabb62-5865-45aa-8d17-a6435e735362
+        tenant: ""
+        namespace: ""
+        name: ""

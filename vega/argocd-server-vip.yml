@@ -1,0 +1,31 @@
+metadata:
+  name: ves-io-vk8s-service-argocd-server-http
+  namespace: gitops
+  uid: 5950f3ec-df76-44d4-95e7-17d60234688d
+  labels:
+    app.kubernetes.io/component: server
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/part-of: argocd
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: 5950f3ec-df76-44d4-95e7-17d60234688d
+spec:
+  ver_spec:
+    vip_classifier:
+      virtual_network:
+        ref:
+          - kind: virtual_network.Object
+            uid: 9269494c-0bff-4203-a8cb-1fbdbaa83a6e
+            tenant: ""
+            namespace: ""
+            name: ""
+    virtual_k8s_service_name: argocd-server.gitops
+    network_connector: []
+    advertise_policy:
+      - kind: ves.io.vega.cfg.adc.advertise_policy.Object
+        uid: 7d4073cb-bc3c-452b-b2fc-90132e06f5cc
+        tenant: ""
+        namespace: ""
+        name: ""

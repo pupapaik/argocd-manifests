@@ -1,0 +1,30 @@
+metadata:
+  name: ves-io-vk8s-service-argocd-redis-tcp-redis
+  namespace: gitops
+  uid: 6aba3175-1b65-48c6-8f10-9420f6c19aa6
+  labels:
+    app.kubernetes.io/component: redis
+    app.kubernetes.io/name: argocd-redis
+    app.kubernetes.io/part-of: argocd
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: 6aba3175-1b65-48c6-8f10-9420f6c19aa6
+  tenant: smart-retail
+spec:
+  gc_spec:
+    where:
+      virtual_network:
+        ref:
+          - kind: virtual_network.Object
+            uid: 9269494c-0bff-4203-a8cb-1fbdbaa83a6e
+            tenant: ""
+            namespace: ""
+            name: ""
+    address: 10.3.82.54
+    public_ip: []
+    protocol: TCP
+    port: 6379
+    tls_parameters: null
+    skip_xff_append: false

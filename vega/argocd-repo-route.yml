@@ -1,0 +1,49 @@
+metadata:
+  name: ves-io-vk8s-service-argocd-repo-server-server
+  namespace: gitops
+  uid: c79aa293-c09b-4524-9057-8a4abdc9ffa6
+  labels: {}
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: c79aa293-c09b-4524-9057-8a4abdc9ffa6
+spec:
+  gc_spec:
+    routes:
+      - match:
+          - path:
+              regex: (.*?)
+            headers: []
+            query_params: []
+            http_method: ANY
+        route_destination:
+          destinations:
+            - cluster:
+                - kind: cluster.Object
+                  uid: 25b3cc86-b5c9-46b5-8b3b-8c01b266e712
+                  tenant: ""
+                  namespace: ""
+                  name: ""
+              weight: 0
+              endpoint_subsets: {}
+          prefix_rewrite: ""
+          timeout: 0
+          retry_policy: null
+          endpoint_subsets: {}
+          mirror_policy: null
+          web_socket_config: null
+          buffer_policy: null
+          cors_policy: null
+          hash_policy: []
+          priority: DEFAULT
+          spdy_config: null
+        disable_custom_script: false
+        service_policy: null
+        request_headers_to_add: []
+        response_headers_to_add: []
+        request_headers_to_remove: []
+        response_headers_to_remove: []
+        waf_type: null
+        disable_location_add: false
+  ver_spec: null

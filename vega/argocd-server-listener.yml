@@ -1,0 +1,34 @@
+metadata:
+  name: ves-io-vk8s-service-argocd-server-http
+  namespace: gitops
+  uid: 9e02406f-eea1-467c-80bb-9ab528e26628
+  labels: {}
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: 9e02406f-eea1-467c-80bb-9ab528e26628
+spec:
+  ver_spec:
+    vip:
+      - kind: ves.io.vega.cfg.adc.virtual_ip.Object
+        uid: 5950f3ec-df76-44d4-95e7-17d60234688d
+        tenant: ""
+        namespace: ""
+        name: ""
+    protocol: TCP
+    port: 80
+    server_name: ""
+    forward_client_cert_details: SANITIZE
+    set_current_client_cert_details: null
+    per_connection_buffer_limit_bytes: 0
+    tls_parameters: null
+    network_connector: []
+    authz_grpc_params: null
+    skip_xff_append: false
+    advertise_policy:
+      - kind: ves.io.vega.cfg.adc.advertise_policy.Object
+        uid: 7d4073cb-bc3c-452b-b2fc-90132e06f5cc
+        tenant: ""
+        namespace: ""
+        name: ""

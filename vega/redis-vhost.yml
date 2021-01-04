@@ -1,0 +1,82 @@
+metadata:
+  name: ves-io-vk8s-service-argocd-redis-tcp-redis
+  namespace: gitops
+  uid: f35eb978-6916-4bee-98eb-4bf6b54901dc
+  labels:
+    app.kubernetes.io/component: redis
+    app.kubernetes.io/name: argocd-redis
+    app.kubernetes.io/part-of: argocd
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: f35eb978-6916-4bee-98eb-4bf6b54901dc 
+  tenant: smart-retail
+spec:
+  gc_spec:
+    domains:
+      - argocd-redis.gitops.svc.cluster.local
+      - argocd-redis.gitops.svc
+      - argocd-redis.gitops
+      - argocd-redis
+      - argocd-redis.gitops.svc.cluster.local:6379
+      - argocd-redis.gitops.svc:6379
+      - argocd-redis.gitops:6379
+      - argocd-redis:6379
+    routes:
+      - kind: route.Object
+        uid: a9e86cee-b2d0-4551-8613-7bd945f39629
+        tenant: ""
+        namespace: ""
+        name: ""
+    javascript_info: null
+    advertise_policies: []
+    request_headers_to_add: []
+    response_headers_to_add: []
+    request_headers_to_remove: []
+    response_headers_to_remove: []
+    tls_parameters: null
+    type: VIRTUAL_SERVICE
+    buffer_policy: null
+    cors_policy: null
+    proxy: TCP_PROXY
+    jwt: []
+    waf_type: null
+    dynamic_reverse_proxy: null
+    add_location: false
+    compression_params: null
+    custom_errors: {}
+    disable_default_error_pages: false
+    max_request_header_size: 0
+    user_identification: []
+    rate_limiter: []
+    rate_limiter_allowed_prefixes: []
+    retry_policy: null
+    temporary_user_blocking: null
+    malicious_user_mitigation: []
+    tls_intercept: null
+    idle_timeout: 0
+    disable_dns_resolve: false
+    dns_volterra_managed: false
+    dns_domains: []
+    auto_cert: false
+    state: VIRTUAL_HOST_READY
+    host_name: ""
+    dns_info: []
+    auto_cert_state: AutoCertDisabled
+    auto_cert_info: null
+    user_domains: []
+    service_policy_sets: []
+    loadbalancer_algorithm: ROUND_ROBIN
+  ver_spec:
+    listener:
+      - kind: ves.io.vega.cfg.adc.listener.Object
+        uid: 6cec211c-ce1f-4ecb-9dd1-1c09b4a22160
+        tenant: ""
+        namespace: ""
+        name: ""
+    jse: []
+    policy_set: []
+    policy_set_list: []
+    authz_info: null
+    network_connector: []

@@ -1,0 +1,35 @@
+metadata:
+  name: ves-io-vk8s-service-argocd-redis-tcp-redis
+  namespace: gitops
+  uid: 6cec211c-ce1f-4ecb-9dd1-1c09b4a22160
+  labels: {}
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: 6cec211c-ce1f-4ecb-9dd1-1c09b4a22160
+  tenant: smart-retail
+spec:
+  ver_spec:
+    vip:
+      - kind: ves.io.vega.cfg.adc.virtual_ip.Object
+        uid: 243e4864-6364-4cc3-9a63-5309649562af
+        tenant: ""
+        namespace: ""
+        name: ""
+    protocol: TCP
+    port: 6379
+    server_name: ""
+    forward_client_cert_details: SANITIZE
+    set_current_client_cert_details: null
+    per_connection_buffer_limit_bytes: 0
+    tls_parameters: null
+    network_connector: []
+    authz_grpc_params: null
+    skip_xff_append: false
+    advertise_policy:
+      - kind: ves.io.vega.cfg.adc.advertise_policy.Object
+        uid: 6aba3175-1b65-48c6-8f10-9420f6c19aa6
+        tenant: ""
+        namespace: ""
+        name: ""

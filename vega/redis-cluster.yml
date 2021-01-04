@@ -1,0 +1,31 @@
+metadata:
+  name: ves-io-vk8s-service-argocd-redis-tcp-redis
+  namespace: gitops
+  uid: 7dba16d5-167e-4a56-9a9d-4bbe867e4d7d
+  labels: {}
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: 7dba16d5-167e-4a56-9a9d-4bbe867e4d7d
+  tenant: smart-retail
+spec:
+  gc_spec:
+    endpoints:
+      - kind: endpoint.Object
+        uid: 153aca38-3a78-4230-9ee6-f400348e2bc0
+    health_checks: []
+    loadbalancer_algorithm: ROUND_ROBIN
+    circuit_breaker: null
+    endpoint_subsets: []
+    default_subset: {}
+    fallback_policy: NO_FALLBACK
+    tls_parameters: null
+    connection_timeout: 0
+    http_idle_timeout: 0
+    outlier_detection: null
+    endpoint_selection: DISTRIBUTED
+    dns_lookup_family: AUTO
+    dns_discovery_type: STRICT_DNS
+    http2_options:
+      enabled: false

@@ -1,0 +1,32 @@
+metadata:
+  name: ves-io-vk8s-service-argocd-redis-tcp-redis
+  namespace: gitops
+  uid: 243e4864-6364-4cc3-9a63-5309649562af
+  labels:
+    app.kubernetes.io/component: redis
+    app.kubernetes.io/name: argocd-redis
+    app.kubernetes.io/part-of: argocd
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: 243e4864-6364-4cc3-9a63-5309649562af
+  owner_view: null
+spec:
+  ver_spec:
+    vip_classifier:
+      virtual_network:
+        ref:
+          - kind: virtual_network.Object
+            uid: 9269494c-0bff-4203-a8cb-1fbdbaa83a6e
+            tenant: ""
+            namespace: ""
+            name: ""
+    virtual_k8s_service_name: argocd-redis.gitops
+    network_connector: []
+    advertise_policy:
+      - kind: ves.io.vega.cfg.adc.advertise_policy.Object
+        uid: 6aba3175-1b65-48c6-8f10-9420f6c19aa6
+        tenant: ""
+        namespace: ""
+        name: ""

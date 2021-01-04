@@ -1,0 +1,57 @@
+metadata:
+  name: ves-io-vk8s-service-argocd-redis-tcp-redis
+  namespace: gitops
+  uid: a9e86cee-b2d0-4551-8613-7bd945f39629
+  labels: {}
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: a9e86cee-b2d0-4551-8613-7bd945f39629
+  tenant: smart-retail
+  namespace:
+    - kind: namespace
+      uid: ""
+      tenant: smart-retail
+      namespace: ""
+      name: gitops
+  owner_view: null
+spec:
+  gc_spec:
+    routes:
+      - match:
+          - path:
+              regex: (.*?)
+            headers: []
+            query_params: []
+            http_method: ANY
+        route_destination:
+          destinations:
+            - cluster:
+                - kind: cluster.Object
+                  uid: 7dba16d5-167e-4a56-9a9d-4bbe867e4d7d
+                  tenant: ""
+                  namespace: ""
+                  name: ""
+              weight: 0
+              endpoint_subsets: {}
+          prefix_rewrite: ""
+          timeout: 0
+          retry_policy: null
+          endpoint_subsets: {}
+          mirror_policy: null
+          web_socket_config: null
+          buffer_policy: null
+          cors_policy: null
+          hash_policy: []
+          priority: DEFAULT
+          spdy_config: null
+        disable_custom_script: false
+        service_policy: null
+        request_headers_to_add: []
+        response_headers_to_add: []
+        request_headers_to_remove: []
+        response_headers_to_remove: []
+        waf_type: null
+        disable_location_add: false
+  ver_spec: null

@@ -1,0 +1,9 @@
+metadata:
+  name: gitops
+  namespace: gitops
+  uid: b135a3eb-0fe6-4d73-8087-6bffde7b042c
+spec:
+  verSpec:
+    site:
+    - kind: ves.io.vega.cfg.site.Object
+      uid: 86aabb62-5865-45aa-8d17-a6435e735362 #site-local

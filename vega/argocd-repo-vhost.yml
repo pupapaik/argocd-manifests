@@ -1,0 +1,81 @@
+metadata:
+  name: ves-io-vk8s-service-argocd-repo-server-server
+  namespace: gitops
+  uid: d539a9dc-85d1-49c9-8132-7126ec24a012
+  labels:
+    app.kubernetes.io/component: repo-server
+    app.kubernetes.io/name: argocd-repo-server
+    app.kubernetes.io/part-of: argocd
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: d539a9dc-85d1-49c9-8132-7126ec24a012
+spec:
+  gc_spec:
+    domains:
+      - argocd-repo-server.gitops.svc.cluster.local
+      - argocd-repo-server.gitops.svc
+      - argocd-repo-server.gitops
+      - argocd-repo-server
+      - argocd-repo-server.gitops.svc.cluster.local:8081
+      - argocd-repo-server.gitops.svc:8081
+      - argocd-repo-server.gitops:8081
+      - argocd-repo-server:8081
+    routes:
+      - kind: route.Object
+        uid: c79aa293-c09b-4524-9057-8a4abdc9ffa6
+        tenant: ""
+        namespace: ""
+        name: ""
+    javascript_info: null
+    advertise_policies: []
+    request_headers_to_add: []
+    response_headers_to_add: []
+    request_headers_to_remove: []
+    response_headers_to_remove: []
+    tls_parameters: null
+    type: VIRTUAL_SERVICE
+    buffer_policy: null
+    cors_policy: null
+    proxy: TCP_PROXY
+    jwt: []
+    waf_type: null
+    dynamic_reverse_proxy: null
+    add_location: false
+    compression_params: null
+    custom_errors: {}
+    disable_default_error_pages: false
+    max_request_header_size: 0
+    user_identification: []
+    rate_limiter: []
+    rate_limiter_allowed_prefixes: []
+    retry_policy: null
+    temporary_user_blocking: null
+    malicious_user_mitigation: []
+    tls_intercept: null
+    idle_timeout: 0
+    disable_dns_resolve: false
+    dns_volterra_managed: false
+    dns_domains: []
+    auto_cert: false
+    state: VIRTUAL_HOST_READY
+    host_name: ""
+    dns_info: []
+    auto_cert_state: AutoCertDisabled
+    auto_cert_info: null
+    user_domains: []
+    service_policy_sets: []
+    loadbalancer_algorithm: ROUND_ROBIN
+  ver_spec:
+    listener:
+      - kind: ves.io.vega.cfg.adc.listener.Object
+        uid: cca7d2f2-38a1-4684-9992-224624531785
+        tenant: ""
+        namespace: ""
+        name: ""
+    jse: []
+    policy_set: []
+    policy_set_list: []
+    authz_info: null
+    network_connector: []

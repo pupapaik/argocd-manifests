@@ -1,0 +1,81 @@
+metadata:
+  name: ves-io-vk8s-service-argocd-server-http
+  namespace: gitops
+  uid: 460340c3-dca4-491c-9174-5072a380a9c3
+  labels:
+    app.kubernetes.io/component: server
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/part-of: argocd
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: 460340c3-dca4-491c-9174-5072a380a9c3
+spec:
+  gc_spec:
+    domains:
+      - argocd-server.gitops.svc.cluster.local
+      - argocd-server.gitops.svc
+      - argocd-server.gitops
+      - argocd-server
+      - argocd-server.gitops.svc.cluster.local:80
+      - argocd-server.gitops.svc:80
+      - argocd-server.gitops:80
+      - argocd-server:80
+    routes:
+      - kind: route.Object
+        uid: bad05347-bc90-4c00-9337-d98b82c3fd36
+        tenant: ""
+        namespace: ""
+        name: ""
+    javascript_info: null
+    advertise_policies: []
+    request_headers_to_add: []
+    response_headers_to_add: []
+    request_headers_to_remove: []
+    response_headers_to_remove: []
+    tls_parameters: null
+    type: VIRTUAL_SERVICE
+    buffer_policy: null
+    cors_policy: null
+    proxy: TCP_PROXY
+    jwt: []
+    waf_type: null
+    dynamic_reverse_proxy: null
+    add_location: false
+    compression_params: null
+    custom_errors: {}
+    disable_default_error_pages: false
+    max_request_header_size: 0
+    user_identification: []
+    rate_limiter: []
+    rate_limiter_allowed_prefixes: []
+    retry_policy: null
+    temporary_user_blocking: null
+    malicious_user_mitigation: []
+    tls_intercept: null
+    idle_timeout: 0
+    disable_dns_resolve: false
+    dns_volterra_managed: false
+    dns_domains: []
+    auto_cert: false
+    state: VIRTUAL_HOST_READY
+    host_name: ""
+    dns_info: []
+    auto_cert_state: AutoCertDisabled
+    auto_cert_info: null
+    user_domains: []
+    service_policy_sets: []
+    loadbalancer_algorithm: ROUND_ROBIN
+  ver_spec:
+    listener:
+      - kind: ves.io.vega.cfg.adc.listener.Object
+        uid: 9e02406f-eea1-467c-80bb-9ab528e26628
+        tenant: ""
+        namespace: ""
+        name: ""
+    jse: []
+    policy_set: []
+    policy_set_list: []
+    authz_info: null
+    network_connector: []

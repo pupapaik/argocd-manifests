@@ -1,0 +1,12 @@
+metadata:
+  name: ves.io-vk8s-service-network-smart-retail
+  namespace: shared
+  uid: 50cd201f-56ac-455d-a0c3-469ad5c81d2b
+  labels: {}
+  annotations: {}
+  description: ""
+  disable: false
+system_metadata:
+  uid: 50cd201f-56ac-455d-a0c3-469ad5c81d2b
+spec:
+  ? ver_spec
