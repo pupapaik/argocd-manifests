@@ -1,0 +1,186 @@
+## DEFAULT SA WILL BE USED
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#   labels:
+#     app.kubernetes.io/component: application-controller
+#     app.kubernetes.io/name: argocd-application-controller
+#     app.kubernetes.io/part-of: argocd
+#   name: argocd-application-controller
+# ---
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#   labels:
+#     app.kubernetes.io/component: dex-server
+#     app.kubernetes.io/name: argocd-dex-server
+#     app.kubernetes.io/part-of: argocd
+#   name: argocd-dex-server
+# ---
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#   labels:
+#     app.kubernetes.io/component: redis
+#     app.kubernetes.io/name: argocd-redis
+#     app.kubernetes.io/part-of: argocd
+#   name: argocd-redis
+# ---
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#   labels:
+#     app.kubernetes.io/component: server
+#     app.kubernetes.io/name: argocd-server
+#     app.kubernetes.io/part-of: argocd
+#   name: argocd-server
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/component: all
+    app.kubernetes.io/name: argocd-all
+    app.kubernetes.io/part-of: argocd
+  name: argocd-all
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  - configmaps
+  verbs:
+  - create
+  - get
+  - list
+  - watch
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - argoproj.io
+  resources:
+  - applications
+  - appprojects
+  verbs:
+  - create
+  - get
+  - list
+  - watch
+  - update
+  - patch
+  - delete
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - list
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - pods/log
+  verbs:
+  - get
+- apiGroups:
+  - '*'
+  resources:
+  - '*'
+  verbs:
+  - delete
+  - get
+  - patch
+  - list
+  - create
+  - watch
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/component: redis
+    app.kubernetes.io/name: argocd-redis
+    app.kubernetes.io/part-of: argocd
+  name: argocd-redis
+rules:
+- apiGroups:
+  - security.openshift.io
+  resourceNames:
+  - nonroot
+  resources:
+  - securitycontextconstraints
+  verbs:
+  - use
+---
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: ClusterRole
+# metadata:
+#   labels:
+#     app.kubernetes.io/component: application-controller
+#     app.kubernetes.io/name: argocd-application-controller
+#     app.kubernetes.io/part-of: argocd
+#   name: argocd-application-controller
+# rules:
+# - apiGroups:
+#   - '*'
+#   resources:
+#   - '*'
+#   verbs:
+#   - '*'
+# - nonResourceURLs:
+#   - '*'
+#   verbs:
+#   - '*'
+---
+# apiVersion: rbac.authorization.k8s.io/v1
+# kind: ClusterRoleBinding
+# metadata:
+#   labels:
+#     app.kubernetes.io/component: application-controller
+#     app.kubernetes.io/name: argocd-application-controller
+#     app.kubernetes.io/part-of: argocd
+#   name: argocd-application-controller
+# roleRef:
+#   apiGroup: rbac.authorization.k8s.io
+#   kind: ClusterRole
+#   name: argocd-application-controller
+# subjects:
+# - kind: ServiceAccount
+#   name: default
+#   namespace: argocd
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/component: application-controller
+    app.kubernetes.io/name: argocd-application-controller
+    app.kubernetes.io/part-of: argocd
+  name: argocd-application-controller
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: argocd-all
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: argocd
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  labels:
+    app.kubernetes.io/component: server
+    app.kubernetes.io/name: argocd-server
+    app.kubernetes.io/part-of: argocd
+  name: argocd-server
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: argocd-redis
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: argocd
